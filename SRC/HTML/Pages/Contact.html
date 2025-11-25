@@ -1,0 +1,155 @@
+
+<div id="contact" class="page">
+  <section class="section">
+    <div class="container">
+      <h2 class="sectionTitle">Get In Touch</h2>
+      <p class="sectionSubtitle">We're here to help you plan the perfect New Zealand adventure.</p>
+      <div class="contactContainer">
+        <div class="contactInfo">
+          <div class="contactItem">
+            <div class="contactIcon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3>Our Office</h3>
+              <p>123 Adventure Street, Auckland, New Zealand</p>
+              <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8">Open Mon-Fri 9AM-6PM</p>
+            </div>
+          </div>
+          <div class="contactItem">
+            <div class="contactIcon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h3>Phone</h3>
+              <p>+64 9 123 4567</p>
+              <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8">24/7 Emergency Support</p>
+            </div>
+          </div>
+          <div class="contactItem">
+            <div class="contactIcon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p>info@travelnz.co.nz</p>
+              <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8">Response within 2 hours</p>
+            </div>
+          </div>
+          <div class="contactItem">
+            <div class="contactIcon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div>
+              <h3>Live Chat</h3>
+              <p>Available 24/7</p>
+              <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8">Click chat icon below</p>
+            </div>
+          </div>
+        </div>
+        <form id="contactForm" novalidate>
+          <div class="formGroup">
+            <input id="contact-name" type="text" class="formInput" placeholder="Your Name" required />
+          </div>
+          <div class="formGroup">
+            <input id="contact-email" type="email" class="formInput" placeholder="Your Email" required />
+          </div>
+          <div class="formGroup">
+            <input id="contact-subject" type="text" class="formInput" placeholder="Subject" required />
+          </div>
+          <div class="formGroup customSelectWrapper">
+            <div class="customSelect">
+              <div class="customSelectTrigger">Select Inquiry Type</div>
+              <div class="customOptions">
+                <span class="customOption" data-value="booking">Booking Inquiry</span>
+                <span class="customOption" data-value="tour">Tour Information</span>
+                <span class="customOption" data-value="support">Customer Support</span>
+                <span class="customOption" data-value="feedback">Feedback</span>
+                <span class="customOption" data-value="partnership">Partnership</span>
+              </div>
+            </div>
+            <select id="contactType" class="formInput" required hidden>
+              <option value="">Select Inquiry Type</option>
+              <option value="booking">Booking Inquiry</option>
+              <option value="tour">Tour Information</option>
+              <option value="support">Customer Support</option>
+              <option value="feedback">Feedback</option>
+              <option value="partnership">Partnership</option>
+            </select>
+          </div>
+          <div class="formGroup">
+            <textarea id="contact-message" class="formTextarea" placeholder="Your Message" required></textarea>
+          </div>
+          <button id="contact-submit" type="submit" class="primaryBtn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="sectionTitle">Meet Our Travel Experts</h2>
+      <p class="sectionSubtitle">Our Kiwi-based team designs authentic adventures across Aotearoa.</p>
+      <div class="teamGrid">
+        <div class="teamMember fadeIn">
+          <img src="/SRC/Assets/Images/IMG[ProfessionalWoman].jpg" alt="Sophie" class="teamPhoto" />
+          <h3>Sophie</h3>
+          <p>Adventure Specialist</p>
+          <p style="margin-top: 0.3rem; font-size: 0.9rem; opacity: 0.8">Christchurch</p>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7">Passionate about trekking and guiding travelers through New Zealand’s most breathtaking landscapes. Sophie loves designing off-the-beaten-path adventures and helping visitors experience nature safely and memorably.</p>
+        </div>
+        <div class="teamMember fadeIn">
+          <img src="/SRC/Assets/Images/IMG[ProfessionalMan].jpg" alt="Ben" class="teamPhoto" />
+          <h3>Ben</h3>
+          <p>Culture & Food Expert</p>
+          <p style="margin-top: 0.3rem; font-size: 0.9rem; opacity: 0.8">Auckland</p>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7">Loves uncovering hidden gems and sharing the rich culinary and cultural experiences of Aotearoa. Ben specializes in authentic food tours, cultural events, and local insights to make every trip unique and immersive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="formErrorModal" class="modal">
+  <div class="modalContent">
+    <span class="closeModal">&times;</span>
+    <div class="modalHeader">
+      <i class="fas fa-exclamation-triangle errorIcon"></i>
+      <h2>Incomplete Submission</h2>
+    </div>
+    <div class="modalBody">
+      <p>It looks like some required fields are missing. Please review your submission and ensure all fields marked with are completed.</p>
+      <ul>
+        <li>Check that your name, email, and subject are filled out.</li>
+        <li>Select an inquiry type from the dropdown menu.</li>
+        <li>Write a message explaining your request or feedback.</li>
+      </ul>
+    </div>
+    <div class="modalBtn">
+      <button class="primaryBtn closeErrorModal">Review Form</button>
+    </div>
+  </div>
+</div>
+
+<div id="formSuccessModal" class="modal">
+  <div class="modalContent">
+    <span class="closeModal">&times;</span>
+    <div class="modalHeader">
+      <i class="fas fa-check-circle successIcon"></i>
+      <h2>Success - Message Sent</h2>
+    </div>
+    <div class="modalBody">
+      <p>Thank you for contacting us! Your message has been successfully sent to our support team.</p>
+      <ul>
+        <li>
+          Reference ID: <strong>#<span id="messageRef">12345</span></strong> (for your records)
+        </li>
+        <li>Expected response time: within 24 hours.</li>
+        <li>If urgent, you can also call us at <strong>+64 9 123 4567</strong>.</li>
+      </ul>
+    </div>
+    <div class="modalBtn">
+      <button class="primaryBtn closeSuccessModal">Close</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,527 @@
+@import "./Components/FixedComponents.css";
+@import "./Components/SelectMenus.css";
+@import "./Components/GlobalUtils.css";
+
+/* =========================================================
+   ⚙️ Hero Section
+   ========================================================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url("/SRC/Assets/Images/IMG[Hero].avif") center/cover no-repeat;
+  z-index: -1;
+}
+
+.heroContent {
+  max-width: 650px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* =========================================================
+   ⚙️ Sections
+   ========================================================= */
+.section {
+  padding: 5rem 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, var(--accentGreen), var(--accentBlue));
+  border-radius: 2px;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   ⚙️ Popular Destinations
+   ========================================================= */
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.destinationCard {
+  background: var(--darkCard);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.destinationCard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.destinationImage {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.destinationBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(45deg, var(--accentGreen), var(--accentBlue));
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.destinationContent {
+  padding: 1.5rem;
+}
+
+.destinationContent h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.destinationStats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* =========================================================
+   ⚙️ Featured Tours
+   ========================================================= */
+.toursGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  overflow: visible;
+}
+
+.tourCard {
+  background: var(--darkCard);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.tourCard.premium {
+  border: 2px solid rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+}
+
+.tourCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.tourBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(45deg, var(--accentPurple), var(--accentBlue));
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.tourImage {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.tourOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem 1.5rem 1.5rem;
+}
+
+.tourContent {
+  padding: 1.5rem;
+}
+
+.tourHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.tourHeader h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tourRating {
+  color: #fbbf24;
+  font-size: 0.9rem;
+}
+
+.tourPrice {
+  font-weight: 700;
+  color: var(--accentGreen);
+  font-size: 1.2rem;
+}
+
+.tourCategory, .tourDuration {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accentGreen);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.tourHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.highlightTag {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--accentBlue);
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+
+
+/* =========================================================
+   ⚙️ Tours Search (Section)
+   ========================================================= */
+.searchSection {
+  background: var(--darkCard);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 9999;
+}
+
+.searchBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.5);
+  font-size: 1rem;
+}
+
+.searchInput:focus {
+  border-color: var(--accentBlue);
+}
+
+/* =========================================================
+   ⚙️ Contact (Page & Form)
+   ========================================================= */
+.contactContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contactIcon {
+  background: linear-gradient(45deg, var(--accentGreen), var(--accentBlue));
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.contactIcon:hover {
+  transform: scale(1.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.6);
+  color: #f8fafc;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--accentBlue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.formTextarea {
+  height: 150px;
+  resize: vertical;
+}
+
+select.formInput {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 12px;
+  color: #f8fafc;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.modalContent {
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  max-width: 500px;
+  width: 90%;
+  background: rgba(15, 23, 42, 0.95);
+  color: #f8fafc;
+  position: relative;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.errorIcon {
+  color: #ef4444;
+  font-size: 1.8rem;
+}
+
+.successIcon {
+  color: #22c55e;
+  font-size: 1.8rem;
+}
+
+.modalBody ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
+.modalBody ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   ⚙️ Team Members (Contact)
+   ========================================================= */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.teamMember {
+  background: var(--darkCard);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.teamMember:hover {
+  transform: translateY(-5px);
+  border-color: rgba(45, 212, 191, 0.3);
+}
+
+.teamPhoto {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.teamMember h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.teamMember p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* =========================================================
+   ⚙️ Reviews (About Us)
+   ========================================================= */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonialCard {
+  background: var(--darkCard);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonialContent {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.testimonialContent::before {
+  content: '"';
+  font-size: 4rem;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  opacity: 0.2;
+}
+
+/* =========================================================
+   ⚙️ Placeholder (Page)
+   ========================================================= */
+.constructionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.constructionIcon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, var(--accentOrange), var(--accent-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.constructionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.constructionMessage {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}

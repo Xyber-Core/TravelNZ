@@ -1,0 +1,163 @@
+/* =========================================================
+   ⚙️ FAQ (SelectMenus)
+   ========================================================= */
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.faqQuestion {
+  background: var(--darkCard);
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.faqQuestion:hover {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.faqAnswer {
+  background: rgba(15, 23, 42, 0.5);
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none; 
+  border-radius: 12px;
+}
+
+.faqAnswer.open {
+  padding: 1.5rem; 
+  max-height: 200px; 
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================================
+   ⚙️ Tours & Contact (SelectMenus)
+   ========================================================= */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchSection .customSelectWrapper {
+  flex: 1 1 180px;
+  min-width: 160px;
+  max-width: 200px;
+}
+
+.filters .resetBtn {
+  margin-top: 0;
+  flex-shrink: 0;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  border-radius: 12px;
+}
+
+.selectWrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+
+.customSelectWrapper {
+  position: relative;
+  z-index: 9999;
+}
+
+.customSelect {
+  position: relative;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.customSelectTrigger {
+  padding: 1rem;
+  color: #f8fafc;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.customSelectTrigger::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-right: 2px solid #f8fafc;
+  border-bottom: 2px solid #f8fafc;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.customSelect.open .customSelectTrigger::after {
+  transform: rotate(-135deg);
+}
+
+.customOptions {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  max-height: none;
+  overflow-y: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.customOption:last-child {
+  border-bottom: none;
+}
+
+.customOption:hover {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.customSelect.open .customOptions {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.customOption {
+  padding: 0.8rem 1rem;
+  color: #f8fafc;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+
+.customOption:hover {
+  background: rgba(59, 130, 246, 0.3);
+}
+

@@ -1,0 +1,176 @@
+:root {
+  --darkBG: #0f172a;
+  --darkCard: #1e293b;
+  --darkText: #f8fafc;
+  --accentGreen: #10b981;
+  --accentBlue: #3b82f6;
+  --accentTeal: #2dd4bf;
+  --accentPurple: #8b5cf6;
+  --accentOrange: #f59e0b;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: "Inter", sans-serif;
+  background-color: var(--darkBG);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a, div, button, span,
+input, label, select, textarea {
+  font-family: inherit;
+  color: var(--darkText);
+  text-decoration: none;
+  outline: none;
+}
+
+ul, li {
+  list-style: none;
+  margin-bottom: 0.8rem;
+}
+
+.page {
+  position: relative;
+  z-index: 2;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================================
+   ⚙️ Custom Scrollbar
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accentBlue), var(--accentGreen));
+  border-radius: 10px;
+  border: 2px solid rgba(15, 23, 42, 0.9);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accentTeal), var(--accentPurple));
+  transform: scale(1.05);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+/* =========================================================
+   ⚙️ Page Structure
+   ========================================================= */
+.page {
+  display: none;
+  padding-top: 80px;
+}
+
+.page.active {
+  display: block;
+}
+
+/* =========================================================
+   ⚙️ Buttons/Links
+   ========================================================= */
+.primaryBtn {
+  background: linear-gradient(45deg, var(--accentGreen), var(--accentBlue));
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.secondaryBtn:hover {
+  border-color: var(--accentTeal);
+  background: rgba(45, 212, 191, 0.1);
+}
+
+/* =========================================================
+   ⚙️ Mobile Error Page
+   ========================================================= */
+.mobileError {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--darkBG);
+  text-align: center;
+  padding: 2rem;
+}
+
+.mobileError .container {
+  max-width: 800px;
+}
+
+.mobileError .errorTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--darkText);
+  position: relative;
+}
+
+.mobileError .errorTitle::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.5rem auto 0;
+  background: linear-gradient(45deg, var(--accentGreen), var(--accentBlue));
+  border-radius: 2px;
+}
+
+.mobileError .errorText {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: var(--darkText);
+}
+
+.mobileError .primaryBtn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
