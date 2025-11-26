@@ -14,7 +14,7 @@ $(function () {
     $("#Nav").load("/SRC/HTML/Components/Nav.html", function () {
       $("#Nav").find("a, button").not(".logo").remove();
     });
-
+    $("#disclaimerModal").remove();
     $("#disclaimerBtn").remove();
     $("#Footer").remove();
   }
@@ -55,3 +55,4 @@ $(function () {
     });
   }
 });
+
